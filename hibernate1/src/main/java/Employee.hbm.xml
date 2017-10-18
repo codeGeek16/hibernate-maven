@@ -11,8 +11,17 @@
 		</id>
 		<property name="firstName" column="fName" type="string" />
 		<property name="lastName" column="lName" type="string" />
+		<many-to-one name="addr" class="com.galaxe.Pojo.Address" 
+		column="add_id" not-null="true"/>
 	</class>
 	
-
-
+	<class name="com.galaxe.Pojo.Address" table="address">
+	
+		<id name ="id" column="addrId">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="street" column="street" type="string"/>
+		<property name="city" column="city" type ="string"/>
+		<property name ="state" column ="state" type="string"/>
+	</class>
 </hibernate-mapping>
